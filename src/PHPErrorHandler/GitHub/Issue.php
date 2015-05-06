@@ -1,9 +1,10 @@
 <?php
-class Issue {
-
 namespace PHPErrorHandler\GitHub;
 
 use PHPErrorHandler\GitHub\ErrorBody;
+
+
+class Issue {
 
 	/**
 	title		string				Required. The title of the issue.
