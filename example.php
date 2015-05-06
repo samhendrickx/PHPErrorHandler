@@ -1,15 +1,12 @@
 <?php
-set_include_path(" ");
+require 'vendor/autoload.php';
 
 
-require_once 'Catchr/Autoloader.php';
-Catchr_Autoloader::register();
+$catchr = new Catchr\Catchr();
+$catchr->handleErrors();
 
 
-$handler = new Catchr_Handler();
-$handler->handleErrors();
-
-echo 'before error<br>';
 echo $undefined;
-echo 'after error';
 ?>
+
+

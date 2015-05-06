@@ -5,7 +5,7 @@ namespace Catchr;
 use Catchr\GitHub\ErrorBody;
 use Catchr\GitHub\GitHubService;
 
-class ErrorHandler {
+class Catchr {
 	private $mail = true;
 	private $emailAddress = "";
 
