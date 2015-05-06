@@ -1,9 +1,9 @@
 <?php
 
-namespace PHPErrorHandler\GitHub;
+namespace Catchr\GitHub;
 
-use PHPErrorHandler\GitHub\Issue;
-use PHPErrorHandler\GitHub\APICaller;
+use Catchr\GitHub\Issue;
+use Catchr\GitHub\APICaller;
 
 
 class GitHubService {

@@ -1,9 +1,9 @@
 <?php
 
-namespace PHPErrorHandler;
+namespace Catchr;
 
-use PHPErrorHandler\GitHub\ErrorBody;
-use PHPErrorHandler\GitHub\GitHubService;
+use Catchr\GitHub\ErrorBody;
+use Catchr\GitHub\GitHubService;
 
 class ErrorHandler {
 	private $mail = true;
@@ -18,7 +18,7 @@ class ErrorHandler {
 
 	}
 	public function handleErrors() {
-		//register_shutdown_function('PHPErrorHandler::errorHandler');
+		//register_shutdown_function('Catchr::errorHandler');
 		set_error_handler(array($this, 'errorHandler'), E_ALL);
 	}
 

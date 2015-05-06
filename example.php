@@ -2,11 +2,11 @@
 set_include_path(" ");
 
 
-require_once 'PHPErrorHandler/Autoloader.php';
-PHPErrorHandler_Autoloader::register();
+require_once 'Catchr/Autoloader.php';
+Catchr_Autoloader::register();
 
 
-$handler = new PHPErrorHandler_Handler();
+$handler = new Catchr_Handler();
 $handler->handleErrors();
 
 echo 'before error<br>';

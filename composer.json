@@ -1,9 +1,9 @@
 {
-    "name": "samhendrickx/PHPErrorHandler",
+    "name": "samhendrickx/catchr",
     "license": "MIT",
     "description": "Handles PHP errors and creates GitHub issues for them",
     "keywords": ["library", "php", "handler", "handling", "github", "issues"],
-    "homepage": "https://github.com/samhendrickx/PHPErrorHandler",
+    "homepage": "https://github.com/samhendrickx/catchr",
     "authors": [
         {
             "name": "Sam Hendrickx",
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-0": {
-            "PHPErrorHandler": "src/"
+            "Catchr": "src/"
         }
     },
     "extra": {

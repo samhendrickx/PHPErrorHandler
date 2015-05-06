@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPErrorHandler\GitHub;
+namespace Catchr\GitHub;
 
 class ErrorBody {
 

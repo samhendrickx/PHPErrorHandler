@@ -1,7 +1,7 @@
 <?php
-namespace PHPErrorHandler\GitHub;
+namespace Catchr\GitHub;
 
-use PHPErrorHandler\GitHub\ErrorBody;
+use Catchr\GitHub\ErrorBody;
 
 
 class Issue {
