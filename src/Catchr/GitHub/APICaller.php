@@ -1,8 +1,15 @@
 <?php
 
+/**
+ * Catchr - Handles PHP errors and creates GitHub issues for them
+ * @author Sam Hendrickx <http://github.com/samhendrickx>
+ */
+
 namespace Catchr\GitHub;
 
-// Singleton
+/**
+ * Class for calling an API
+ */
 class APICaller {
 	private $githubUsername;
 	private $githubPassword;
@@ -14,6 +21,16 @@ class APICaller {
 		$this->githubRepository = $githubRepository;
 
 	}
+
+	/**
+	 * Method to call an API
+	 *
+	 * @param string $method
+	 * @param string $url
+	 * @param string $data
+	 * 
+	 * @return array
+	 */
 
 	public function callAPI($method, $url, $data = false) {
 	    $curl = curl_init();
@@ -55,10 +72,10 @@ class APICaller {
 
 	    $result = curl_exec($curl);
 
-		# -insecure
+		// -insecure
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
-		# Send request.
+		// Send request.
 		$result = curl_exec($curl);
 
 		curl_close($curl);

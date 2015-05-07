@@ -1,6 +1,15 @@
 <?php
 
+/**
+ * Catchr - Handles PHP errors and creates GitHub issues for them
+ * @author Sam Hendrickx <http://github.com/samhendrickx>
+ */
+
 namespace Catchr\GitHub;
+
+/**
+ * Exception for GitHub-related classes
+ */
 
 class GitHubException extends Exception
 {

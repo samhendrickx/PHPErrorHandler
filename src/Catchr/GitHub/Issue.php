@@ -1,25 +1,70 @@
 <?php
+
+/**
+ * Catchr - Handles PHP errors and creates GitHub issues for them
+ * @author Sam Hendrickx <http://github.com/samhendrickx>
+ */
+
 namespace Catchr\GitHub;
 
 use Catchr\GitHub\ErrorBody;
 
-
+/**
+ * Represents a GitHub issue
+ */
 class Issue {
 
 	/**
-	title		string				Required. The title of the issue.
-	body		string				The contents of the issue.
-	assignee	string				Login for the user that this issue should be assigned to. NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise.
-	milestone	number				Milestone to associate this issue with. NOTE: Only users with push access can set the milestone for new issues. The milestone is silently dropped otherwise.
-	labels		array of strings	Labels to associate with this issue. NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise.
-	*/
+	 * Number of issue
+	 *
+	 * @var int 
+	 */
 	private $number;
+
+	/**
+	 * Title of issue
+	 *
+	 * @var string 
+	 */
 	private $title;
+
+	/**
+	 * Body of issue
+	 *
+	 * @var \Catchr\GitHub\ErrorBody
+	 */
 	private $body;
+
+	/**
+	 * Assignee of issue
+	 *
+	 * @var string 
+	 */
 	private $assignee;
+
+	/**
+	 * Milestone of issue
+	 *
+	 * @var string 
+	 */
 	private $milestone;
+
+	/**
+	 * Labels of issue
+	 *
+	 * @var array 
+	 */
 	private $labels;
 
+	/**
+	 * Constructor 
+	 *
+	 * @param string $title
+	 * @param \Catchr\GitHub\ErrorBody $body
+	 * @param string $assignee
+	 * @param string $milestone
+	 * @param string[] $labels
+	 */
 	public function __construct($title, $body="", $assignee = "", $milestone = "", $labels = array()) {
 		$this->setTitle($title);
 		$this->setBody($body);
@@ -28,10 +73,20 @@ class Issue {
 		$this->setLabels($labels);
 	}
 
+	/**
+	 * Sets number
+	 *
+	 * @param int $number
+	 */
 	public function setNumber($number) {
 		$this->number = $number;
 	}
 
+	/**
+	 * Sets title
+	 *
+	 * @param string $title
+	 */
 	public function setTitle($title) {
 		if (empty($title)) {
 			throw new GitHubException("Title of issue can't be empty");
@@ -40,41 +95,97 @@ class Issue {
 		$this->title = $title;
 	}
 
+	/*
+	 * Sets body
+	 *
+	 * @param \Catchr\GitHub\ErrorBody $body
+	 */
 	public function setBody($body) {
 		if (!empty($body)) {
 			$this->body = $body;
 		}
 	}
 
+	/**
+	 * Sets assignee
+	 *
+	 * @param string $assignee
+	 */
 	public function setAssignee($assignee) {
 		if (!empty($assignee)) {
 			$this->assignee = $assignee;
 		}
 	}
 
+	/**
+	 * Sets milestone
+	 *
+	 * @param string $milestone
+	 */
 	public function setMilestone($milestone) {
 		if (!empty($milestone)) {
 			$this->milestone = $milestone;
 		}
 	}
 
+	/**
+	 * Sets labels
+	 *
+	 * @param string[] $labels
+	 */
 	public function setLabels($labels) {
 		if (count($labels) <= 0) {
 			$this->labels = $labels;
 		}
 	}
 
+	/**
+	 * Gets number
+	 *
+	 * @return int 
+	 */
 	public function getNumber() { return $this->number; }
+
+	/**
+	 * Gets title
+	 *
+	 * @return string 
+	 */
 	public function getTitle() { return $this->title; }
+
+	/**
+	 * Gets body
+	 *
+	 * @return \Catchr\GitHub\ErrorBody
+	 */
 	public function getBody() { return $this->body; }
+
+	/**
+	 * Gets assignee
+	 *
+	 * @return string 
+	 */
 	public function getAssignee() { return $this->assignee; }
+
+	/**
+	 * Gets milestone
+	 *
+	 * @return string 
+	 */
 	public function getMilestone() { return $this->milestone; }
+
+	/**
+	 * Gets labels
+	 *
+	 * @return string[] 
+	 */
 	public function getLabels() { return $this->labels; }
 
-	public function appendToBody($text) {
-		$this->body .= $text;
-	}
-
+	/**
+	 * Converts object to json object
+	 *
+	 * @return string
+	 */
 	public function toJson() {
 		$data = array();
 
