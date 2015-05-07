@@ -36,7 +36,7 @@ class Catchr {
 	}
 
 	/** 
-	 * Starts handling errors
+	 * Method for handling errors
 	 *
 	 * @param int $errno
 	 * @param string $errstr
@@ -45,7 +45,6 @@ class Catchr {
 	 *
 	 * @return bool 
 	 */
-
 	public function errorHandler($errno = '', $errstr = '', $errfile = '', $errline = -1) {
 		if (!(error_reporting() & $errno)) {
 	        // This error code is not included in error_reporting
