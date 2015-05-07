@@ -1,12 +1,11 @@
 <?php
-require 'vendor/autoload.php';
+	require 'vendor/autoload.php';
 
 
-$catchr = new Catchr\Catchr();
-$catchr->handleErrors();
+	$catchr = new Catchr\Catchr();
+	$catchr->handleErrors();
 
 
-echo $undefined;
+	echo $undefined;
+
 ?>
-
-
