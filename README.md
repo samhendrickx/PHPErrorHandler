@@ -10,7 +10,7 @@ Catches all PHP errors and creates GitHub issues for them
 - Catches all errors (even Fatal errors)
 - Creates clear, detailed GitHub issues
 - Clean, well-structured & tested code-base
-- 
+
 ## (upcoming) Features
 
 - Redirect to pretty error page
