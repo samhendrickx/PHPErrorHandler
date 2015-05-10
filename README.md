@@ -28,5 +28,6 @@ Catches all PHP errors and creates GitHub issues for them
 
     ```php
     require 'vendor/autoload.php';
-	  Catchr\Catchr::handleErrors();
+    
+    Catchr\Catchr::handleErrors();
     ```
